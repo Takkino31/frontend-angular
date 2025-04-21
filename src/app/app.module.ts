@@ -8,6 +8,8 @@ import { MatToolbarModule} from '@angular/material/toolbar';
 import { MatButtonModule} from '@angular/material/button';
 import { MatIconModule} from '@angular/material/icon';
 import { MatMenuModule, MatMenuTrigger} from '@angular/material/menu';
+import { MatSidenavModule} from '@angular/material/sidenav';
+import {MatListItem, MatListModule} from '@angular/material/list';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,10 @@ import { MatMenuModule, MatMenuTrigger} from '@angular/material/menu';
     MatButtonModule,
     MatIconModule,
     MatMenuTrigger,
-    MatMenuModule
+    MatMenuModule,
+    MatSidenavModule,
+    MatListItem,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
