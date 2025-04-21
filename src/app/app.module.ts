@@ -16,6 +16,9 @@ import { ProfileComponent } from './profile/profile.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { StudentsComponent } from './students/students.component';
 import { HomeComponent } from './home/home.component';
+import {MatCardModule} from '@angular/material/card';
+import { LoadStudentsComponent } from './load-students/load-students.component';
+import { LoadPaymentsComponent } from './load-payments/load-payments.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,9 @@ import { HomeComponent } from './home/home.component';
     ProfileComponent,
     DashboardComponent,
     StudentsComponent,
-    HomeComponent
+    HomeComponent,
+    LoadStudentsComponent,
+    LoadPaymentsComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +43,8 @@ import { HomeComponent } from './home/home.component';
     MatMenuModule,
     MatSidenavModule,
     MatListItem,
-    MatListModule
+    MatListModule,
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
