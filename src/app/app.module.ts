@@ -9,7 +9,7 @@ import { MatButtonModule} from '@angular/material/button';
 import { MatIconModule} from '@angular/material/icon';
 import { MatMenuModule, MatMenuTrigger} from '@angular/material/menu';
 import { MatSidenavModule} from '@angular/material/sidenav';
-import {MatListItem, MatListModule} from '@angular/material/list';
+import { MatListItem, MatListModule} from '@angular/material/list';
 import { LoginComponent } from './login/login.component';
 import { PaymentsComponent } from './payments/payments.component';
 import { ProfileComponent } from './profile/profile.component';
@@ -19,6 +19,12 @@ import { HomeComponent } from './home/home.component';
 import {MatCardModule} from '@angular/material/card';
 import { LoadStudentsComponent } from './load-students/load-students.component';
 import { LoadPaymentsComponent } from './load-payments/load-payments.component';
+import {MatTableModule} from '@angular/material/table';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { MatSortModule} from '@angular/material/sort';
+import {MatInput, MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -45,6 +51,13 @@ import { LoadPaymentsComponent } from './load-payments/load-payments.component';
     MatListItem,
     MatListModule,
     MatCardModule,
+    MatTableModule,
+    MatDividerModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatInput,
+    MatFormFieldModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
