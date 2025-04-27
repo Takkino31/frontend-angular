@@ -9,15 +9,19 @@ export class AuthenticationService {
   public password !: string;
   public roles : any;
   public authenticated: boolean = false;
-
+  public users : any = {
+    'admin': ['STUDENT', 'ADMIN'],
+    'user1': ['STUDENT']
+  }
   constructor(
     private router : Router
   ) { }
 
   public login (username : string, password: string){
-    if (username === "admin" && password === '1234'){
+    if (this.users[username] && password === '1234'){
       this.username = username;
-      this.roles = ['ADMIN'];
+      this.roles = this.users[username]
+      console.log(this.roles)
       this.authenticated = true;
       return true;
     }

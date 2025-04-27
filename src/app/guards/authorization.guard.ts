@@ -1,4 +1,4 @@
-import {
+ import {
   ActivatedRouteSnapshot,
   GuardResult,
   MaybeAsync, Router,
@@ -8,7 +8,7 @@ import {Injectable} from '@angular/core';
 import {AuthenticationService} from '../services/authentication.service';
 
 @Injectable()
-export class AuthGuard{
+export class AuthorizationGuard{
 
   constructor(
     private authService: AuthenticationService,
@@ -17,10 +17,15 @@ export class AuthGuard{
   }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): MaybeAsync<GuardResult> {
-    if (this.authService.authenticated) return this.authService.authenticated
-    else{
-      this.router.navigateByUrl("login")
-      return this.authService.authenticated;
-    }
+    let authorized : boolean = false;
+    // let authorizedRoles: string[] = route.data['roles'];
+    // let roles: string[]= this.authService.roles;
+    // for (let i = 0; i < roles.length; i++) {
+    //   if (authorizedRoles.includes(roles[i])){
+    //     authorized = true;
+    //   }
+    // }
+    if (this.authService.roles.includes('ADMIN')) authorized = true
+    return authorized;
   }
 }
