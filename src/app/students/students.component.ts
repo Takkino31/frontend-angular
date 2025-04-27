@@ -1,7 +1,7 @@
 import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import {MatTableDataSource} from '@angular/material/table';
 import {MatPaginator} from '@angular/material/paginator';
-import { MatSort} from '@angular/material/sort';
+import {MatSort} from '@angular/material/sort';
 import {Router} from '@angular/router';
 
 @Component({
@@ -43,12 +43,11 @@ export class StudentsComponent implements OnInit, AfterViewInit{
   }
 
 
-  filterStudents(event: Event) {
-    let value = (event.target as HTMLInputElement).value
-    this.dataSource.filter = value
+  public filterStudents(event: Event) {
+    this.dataSource.filter = (event.target as HTMLInputElement).value
   }
 
-  getPayments(student: any) {
+  public getPayments(student: any) {
     this.router.navigateByUrl("/payments")
   }
 }

@@ -1,11 +1,23 @@
-<div class="container">
-  <mat-card>
+<div class="login-container">
+  {{loginFormGroup.value | json}}
+  <mat-card [formGroup]="loginFormGroup">
     <mat-card-header>
-      <mat-card-title>Authentication Title</mat-card-title>
+      <mat-card-title>Authentication</mat-card-title>
     </mat-card-header>
     <mat-divider></mat-divider>
     <mat-card-content>
-      login form
+      <mat-form-field appearance="outline">
+        <mat-label> Username </mat-label>
+        <input matInput formControlName="username">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label> Password </mat-label>
+        <input formControlName="password" type="password" matInput>
+      </mat-form-field>
+      <mat-card-actions align="end">
+        <button (click)="login()" mat-raised-button color="primary">Login</button>
+      </mat-card-actions>
     </mat-card-content>
   </mat-card>
 </div>
